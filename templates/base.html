@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://unpkg.com/htmx.org/dist/htmx.js" defer></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.14"></script>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <script src="https://unpkg.com/htmx-ext-ws"></script>
+    <link rel="stylesheet" href="{% if debug %}{% static 'css/style.css' %}{% else %}{% static 'css/style.min.css' %}{% endif %}">
+</head>
+<body class="{% block class %}{% endblock %}">
+
+    {% include 'includes/messages.html' %}
+
+    {% include 'includes/header.html' %}
+
+    {% block layout %}
+
+    {% endblock %}
+
+    {% block javascript %} {% endblock %}
+
+
+</body>
+</html>
